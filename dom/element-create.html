@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            console.log('Hello World');
+        //  Create DOM element using JS
+/*
+            const div=document.createElement('div');
+            div.className='main';
+            div.id='my-div';
+            div.setAttribute('title','generated');
+            div.style.backgroundColor='green';
+            div.style.color='#fff';
+            div.style.borderRadius='10px';
+            div.style.padding='5px';
+            div.style.fontWeight='bolder';
+            div.style.fontSize='30px';
+            div.appendChild(document.createTextNode('First tag using JS'));
+
+            console.log(div);
+            document.body.appendChild(div);
+*/  
+            function addLanguage(langName) {
+                const li=document.createElement('li');
+                li.innerHTML=`${langName}`
+                document.querySelector('.language').appendChild(li);
+            }
+
+            addLanguage('Java');
+            addLanguage('Typescript');
+
+            // Edit
+            const secongLang=document.querySelector('li:nth-child(2)');
+            console.log(secongLang)
+            const newLi=document.createElement('li');
+            newLi.innerHTML='javascript';
+            secongLang.replaceWith(newLi);
+
+            const firstLang = document.querySelector('li:first-child');
+            firstLang.outerHTML='<li> React JS </li>'
+
+            // Remove
+
+            const lastLang = document.querySelector('li:last-child');
+            lastLang.remove()
+        });
+    </script>
+</html>
