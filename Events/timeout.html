@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout</title>
+</head>
+<body>
+    <h1>setInterval and setTimeout</h1>
+    <Button id="start">Start</Button>
+    <button id="stop">Stop</button>
+</body>
+    <script>
+
+        const stop=document.querySelector('#stop');
+        const start=document.querySelector('#start');
+        function printName(name) {
+            console.log(name,new Date().toLocaleTimeString());
+        }
+
+        let interval = setInterval(printName,1000,'Raushan');
+
+        stop.addEventListener('click',(e)=>{
+            clearInterval(interval);
+        });
+
+        start.addEventListener('click',(e)=>{
+            interval=setInterval(printName,1000,'Raushan')
+        })
+    </script>
+</html>

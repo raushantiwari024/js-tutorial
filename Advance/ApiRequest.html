@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			.center {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+			.profile {
+				width: 300px;
+				height: auto;
+			}
+
+			.user {
+				width: 100%;
+				height: auto;
+				text-align: center;
+			}
+			img {
+				width: 40%;
+				height: auto;
+				border-radius: 40%;
+			}
+
+			.details {
+				text-align: left;
+				text-align: justify;
+				width: 70%;
+				margin-left: 10%;
+				margin-top: 6%;
+				height: auto;
+			}
+			.bold {
+				font-weight: bolder;
+			}
+
+			input[type='text'],
+			select,
+			button {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+            .container{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<input
+				type="text"
+				placeholder="Enter Github Userid"
+				id="inputField"
+				value="hiteshchoudhary"
+			/>
+			<button id="button">Fetch</button>
+		</div>
+		<div class="profile center">
+			<div class="user">
+				<img src="" alt="" id="image" />
+				<h2 class="name" id="name"></h2>
+				<div class="details">
+					<p>
+						<span class="bold">Bio</span> :
+						<textarea class="bio" cols="18" rows="5"></textarea>
+					</p>
+					<p>
+						<span class="bold">Followers</span> :
+						<span class="followers"></span>
+					</p>
+					<p>
+						<span class="bold">Public repo : </span
+						><span class="repo"></span>
+					</p>
+					<p>
+						<span class="bold">Blog : </span>
+						<span class="blog"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		const img = document.querySelector('#image');
+		const name = document.getElementById('name');
+		const followers = document.querySelector('.followers');
+		const bio = document.querySelector('.bio');
+		const blog = document.querySelector('.blog');
+		const repo = document.querySelector('.repo');
+		const inputField = document.getElementById('inputField');
+		const button = document.getElementById('button');
+
+		button.addEventListener('click', (e) => {
+			const xhr = new XMLHttpRequest();
+			const target_URL = `https://api.github.com/users/${inputField.value}`;
+			//alert(target_URL);
+			//     https://api.github.com/users/hiteshchoudhary
+			xhr.open('GET', target_URL);
+			xhr.send();
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					const profile = JSON.parse(this.responseText);
+					console.log(profile);
+					console.log(img);
+					console.log(name);
+					img.src = profile.avatar_url;
+					name.innerHTML = `${profile.name}`;
+
+					bio.innerHTML = profile.bio;
+					followers.innerHTML = profile.followers;
+					repo.innerHTML = profile.public_repos;
+					blog.innerHTML = profile.blog;
+					console.log();
+				}
+			};
+		});
+	</script>
+</html>
