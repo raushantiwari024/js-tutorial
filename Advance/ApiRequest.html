@@ -56,11 +56,11 @@
 				border-radius: 4px;
 				box-sizing: border-box;
 			}
-            .container{
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+			.container {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		</style>
 	</head>
 	<body>
@@ -110,6 +110,7 @@
 
 		button.addEventListener('click', (e) => {
 			const xhr = new XMLHttpRequest();
+			xhr.responseType = 'json';
 			const target_URL = `https://api.github.com/users/${inputField.value}`;
 			//alert(target_URL);
 			//     https://api.github.com/users/hiteshchoudhary
@@ -133,5 +134,53 @@
 				}
 			};
 		});
+		/*
+			const xhr = new XMLHttpRequest(); // To create object 
+
+			XMLHttpRequest.open()
+			    Initializes a request.
+
+			XMLHttpRequest.send()
+		    	Sends the request. If the request is asynchronous (which is the default), this method returns as soon as the request is sent.
+
+
+
+
+			XMLHttpRequest.readyState return current state of request
+
+			The XMLHttpRequest property responseType is an enumerated string value specifying the type of data contained in the response. 
+			ie. responseType.value
+			This value can be anyone of following
+			""	//empty string
+			"arraybuffer"
+			"blob"
+			"document"
+			"json"
+			"text"
+			For more details go through https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType
+
+			XMLHttpRequest.responseText return value as string
+
+			XMLHttpRequest.status
+	    		Returns the HTTP response status code of the request.
+
+			XMLHttpRequest.timeout
+ 		   		The time in milliseconds a request can take before automatically being terminated.
+			timeout can be set ie. xhr.timeout = 2000; // time in milliseconds
+
+			XMLHttpRequest.abort()
+			    Aborts the request if it has already been sent.
+
+
+
+
+
+
+			For more details about XMLHttpRequest visit :- 
+				https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+
+
+
+		*/
 	</script>
 </html>
