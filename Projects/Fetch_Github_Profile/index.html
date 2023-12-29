@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./index.css">
+	</head>
+	<body>
+		<div class="container">
+			<input
+				type="text"
+				placeholder="Enter Github Userid"
+				id="inputField"
+				value="hiteshchoudhary"
+			/>
+			<button id="button">Fetch</button>
+		</div>
+		<div class="profile center">
+			<div class="user">
+				<img src="" alt="" id="image" />
+				<h2 class="name" id="name"></h2>
+				<div class="details">
+					<p>
+						<span class="bold">Bio</span> :
+						<textarea class="bio" cols="18" rows="5"></textarea>
+					</p>
+					<p>
+						<span class="bold">Followers</span> :
+						<span class="followers"></span>
+					</p>
+					<p>
+						<span class="bold">Public repo : </span
+						><span class="repo"></span>
+					</p>
+					<p>
+						<span class="bold">Blog : </span>
+						<span class="blog"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+    <script src="./code.js"></script>
+</html>
