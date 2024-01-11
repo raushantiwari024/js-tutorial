@@ -10,10 +10,9 @@ __Italic__
 ~~1000~~ **999**
 
 Github Link
-
 [Github Link](https://github.com/raushantiwari024 "raushantiwari024")
-Image
 
+Image
 ![My image](imageURL)
 
 JAvascript `code`
