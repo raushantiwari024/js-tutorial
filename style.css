@@ -1,0 +1,94 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    background-color: rgb(25, 92, 151);
+}
+
+.myContainer{
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(192, 17, 17, 0.4);
+    border: 5px solid rgb(25, 92, 151);
+
+}
+
+.formDiv{
+    padding: 10px;
+    margin: 10px;
+}
+
+.myContainer h1{
+    text-transform: capitalize;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    background-color:blueviolet;
+    color: white;
+    padding: 10px 0;
+}
+
+.myContainer input:not([type='submit']),.myContainer textarea{
+    width: 100%;
+    height: 35px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    line-height: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: #d6d6d6;
+    outline: 0;
+    transform: all 0.5s ease-out;
+}
+
+.myContainer textarea{
+    height: 100px;
+    resize: none;
+
+}
+
+.myContainer input:focus,.myContainer textarea:focus{
+    border: 2px solid rgb(25, 92, 151);
+    opacity: 1;
+}
+
+
+*::-webkit-input-placeholder{
+    opacity: 1;
+    color: #000;
+}
+
+.myContainer input[type='submit']{
+    font-size: 15px;
+    line-height: 20px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bolder;
+    background-color: rgb(26, 88, 85);
+    color: white;
+
+}
+
+.myContainer input[type='submit']:hover{
+    color: #000;
+    background-color: #d6d6d6;
+}
+
+input + .error,textarea + .error{
+    color: red;
+    display: block;
+    line-height: 20px;
+    padding: 0 15px;
+    /* margin-top: 2px; */
+    font-size: 10px;
+}
